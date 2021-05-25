@@ -1,6 +1,6 @@
-# React Multiple Context 
+# Book List | React App 
 
-## Use multiple context in a single component under the component tree.
+## Focus on using context the the component tree.
 
 ## Topic of Focus:
 - Wrap up all components by the Context Provider Components
@@ -8,4 +8,4 @@
 - Object Destructuring at receiver level components 
 - Generally use sending objects from Context Provider Components
 
-<img src="./src/____.gif">
+<img src="./src/components/img/demo.gif">
