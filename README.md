@@ -8,4 +8,4 @@
 - Object Destructuring at receiver level components 
 - Generally use sending objects from Context Provider Components
 
-<img src="./src/components/img/demo.png">
+<img src="./src/img/demo.png">
