@@ -127,3 +127,9 @@ input[type=submit] {
   background-color: var(--heading);
   color           : white;
 }
+
+.empty {
+  margin    : 20px;
+  text-align: center;
+  font-size : 22px;
+}
