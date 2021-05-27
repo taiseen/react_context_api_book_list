@@ -1,15 +1,17 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { v1 as uuidV1 } from 'uuid';
 
 export const BookContext = createContext();
 
 function BookContextProvider(props) {
 
-    const allBooks = [
-        { title: 'The Power Of Now', author: "Ekar Tolle", time: "January 2020", id: 1 },
-        { title: 'The 5AM Club', author: "Robin Shurma", time: "May 2020", id: 2 },
-        { title: 'Think Like a Monk', author: "Jay Shati", time: "December 2020", id: 3 },
-    ]
+    // get data from localStorage 
+    const localData = localStorage.getItem('books');
+
+    const allBooks = localData ? JSON.parse(localData) : [];
+    // { title: 'The Power Of Now', author: "Ekar Tolle", time: "January 2020", id: 1 },
+    // { title: 'The 5AM Club', author: "Robin Shurma", time: "May 2020", id: 2 },
+    // { title: 'Think Like a Monk', author: "Jay Shati", time: "December 2020", id: 3 },
 
     const [books, setBooks] = useState(allBooks);
 
@@ -24,6 +26,10 @@ function BookContextProvider(props) {
     const deleteBook = (id) => {
         setBooks(books.filter(book => book.id !== id));
     }
+
+    useEffect(() => {
+        localStorage.setItem('books', JSON.stringify(books));
+    }, [books]);
 
     return (
         <BookContext.Provider value={{ books, addBook, deleteBook }}>

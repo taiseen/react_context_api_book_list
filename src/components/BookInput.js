@@ -17,7 +17,7 @@ function BookInput() {
 
         addBook(title, author, `${month} ${year}`);
 
-        console.log(title, author, `${month} ${year}`);
+        //console.log(title, author, `${month} ${year}`);
 
         // for clearing all fields
         setTitle('');
